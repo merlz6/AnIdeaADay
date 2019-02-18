@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 export default class Create extends Component {
   constructor(props){
@@ -31,12 +32,20 @@ onChangeName(event) {
   }
   onSubmit(event) {
    event.preventDefault();
-   console.log(`The values are ${this.state.idea_name}, ${this.state.idea_description}, and ${this.state.idea_dateCreated}`)
+   const obj = {
+     idea_name:this.state.idea_name,
+     idea_description:this.state.idea_description,
+     idea_dateCreated:this.state.idea_dateCreated
+   }
+   axios.post('http://localhost:4000/idea/add', obj)
+   .then(res => console.log(res.data));
+
    this.setState({
      idea_name:'',
      idea_description:'',
      idea_dateCreated:''
    })
+  
  }
 
 

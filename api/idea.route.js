@@ -4,7 +4,7 @@ const ideaRoutes = express.Router();
 // Require the model
 let Idea = require('./idea.model');
 
-// add route 
+// add route
 ideaRoutes.route('/add').post(function (req, res) {
   let idea = new Idea(req.body);
   idea.save()
@@ -14,6 +14,7 @@ ideaRoutes.route('/add').post(function (req, res) {
     .catch(err => {
     res.status(400).send("unable to save to database");
     });
+  
 });
 
 //  get idea data
