@@ -6,3 +6,5 @@ I followed the MERN model setup found from the below:
 https://appdividend.com/2018/11/11/react-crud-example-mern-stack-tutorial/
 
 I also wanted to build this as I have been writing down random business, tech, innovention to ideas about everyday life for a few years now.
+
+
